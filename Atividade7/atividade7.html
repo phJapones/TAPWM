@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jogo de Pedra, Papel e Tesoura</title>
+</head>
+<body>
+    <h1>Jogo de Pedra, Papel e Tesoura</h1>
+    <p>Escolha uma opção:</p>
+    <button id="pedra">Pedra</button>
+    <button id="papel">Papel</button>
+    <button id="tesoura">Tesoura</button>
+    <div id="resultado"></div>
+
+    <script>
+        // Função para a escolha aleatória do computador
+        function escolherComputador() {
+            const opcoes = ["pedra", "papel", "tesoura"];
+            const indice = Math.floor(Math.random() * 3);
+            return opcoes[indice];
+        }
+
+        // Função para determinar o vencedor
+        function determinarVencedor(escolhaJogador, escolhaComputador) {
+            if (escolhaJogador === escolhaComputador) {
+                return "Empate!";
+            } else if (
+                (escolhaJogador === "pedra" && escolhaComputador === "tesoura") ||
+                (escolhaJogador === "papel" && escolhaComputador === "pedra") ||
+                (escolhaJogador === "tesoura" && escolhaComputador === "papel")
+            ) {
+                return "Você venceu!";
+            } else {
+                return "Computador venceu!";
+            }
+        }
+
+        // Função para executar o jogo quando o jogador faz uma escolha
+        function jogar(escolhaJogador) {
+            const escolhaComputador = escolherComputador();
+            const resultado = determinarVencedor(escolhaJogador, escolhaComputador);
+
+            document.getElementById("resultado").innerHTML = `Você escolheu ${escolhaJogador}. O computador escolheu ${escolhaComputador}. ${resultado}`;
+        }
+
+        // Adicione eventos de clique aos botões
+        document.getElementById("pedra").addEventListener("click", function() {
+            jogar("pedra");
+        });
+
+        document.getElementById("papel").addEventListener("click", function() {
+            jogar("papel");
+        });
+
+        document.getElementById("tesoura").addEventListener("click", function() {
+            jogar("tesoura");
+        });
+    </script>
+</body>
+</html>
