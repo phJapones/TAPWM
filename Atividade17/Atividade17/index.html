@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Atividade 17</title>
+    <script src="main.js"></script>
+</head>
+<body>
+    <h1>Formulario Principal</h1>
+    <form onsubmit="validarForm();" id="Form1" name="Form1">
+        <h2>Nome: </h2>
+        <input type="text" id="txtNome" name="txtNome">
+        <h2>Email: </h2>
+        <input type="text" id="txtEmail" name="txtEmail">
+        <h2>Comentário</h2>
+        <textarea type="text" id="txtComentario" name="txtComentario" cols="30" rows="5"></textarea>
+        <h3>Pesquisa</h3>
+        <h4>Primeira vez nesta página?</h4>
+        <input type="radio" id="rdSim" name="rdSim">Sim
+        <input type="radio" id="rdNao" name="rdNao">Não
+        <br>
+        <br>
+        <input type="submit" id="btnEnviar" name="btnEnviar" value="Enviar">
+        <input type="button" id="btnLimpar" name="btnLimpar" value="Limpar" onclick="limparCampos()">
+    </form>
+
+</body>
+</html>
